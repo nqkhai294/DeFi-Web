@@ -1,0 +1,20 @@
+
+.navBtn {
+    font-family: 'CabinRegular';
+    background: transparent;
+    color: white;
+    margin-right: 3rem;
+    font-size: 1.3rem;
+}
+
+.authBtn {
+    font-family: 'CabinRegular';
+    background: rgb(30, 54, 233);
+    color: white;
+    font-size: 1rem;
+    margin-right: 1rem; 
+}
+
+.Container {
+    background-color: red;
+}
