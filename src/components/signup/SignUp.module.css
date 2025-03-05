@@ -1,0 +1,96 @@
+.container {
+    box-sizing: border-box;
+    font-family: 'PoppinsRegular';
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #081b29;
+}
+
+.wrapper {
+    position: relative;
+    width: 750px;
+    
+    background: transparent;
+    border: 2px solid #0ef;
+    box-shadow: 0 0 25px #0ef;
+    overflow: hidden;
+}
+
+.formBox {
+    position: relative;
+    width: 750px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid #0ef;
+    left: 0;
+    padding: 0 25px;
+}
+
+.infoForm {
+    position: absolute;
+    top: 0;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+.inputBox {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-top: 25px;
+}
+
+.inputBox input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    font-size: 16px;
+    color:#fff;
+    outline: none;
+    font-weight: 600;
+    border-bottom: 2px solid #fff;
+    padding-right: 20px;
+
+}
+
+.inputBox label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.inputBox input:focus ~ label,
+.inputBox input:valid ~ label {
+    top: -5px;
+    color: #0ef;
+}
+
+.inputBox input:focus ,
+.inputBox input:valid  {
+    border-bottom-color: #0ef;
+}
+
+.inputBox i {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #fff;
+}
+
+.inputBox input:focus ~ i,
+.inputBox input:valid ~ i {
+    color: #0ef;
+}

@@ -23,24 +23,24 @@
     height: 450px;
     background: transparent;
     border: 2px solid #0ef;
-    overflow: hidden;
     
 }
 
 .formBox.login {
     left: 0;
-    padding: 0 40px;
+    padding: 0 25px;
     /* display: none; */
 }
 
-.form.animation {
+.login .form.animation {
     transform: translateX(0);
     transition: .7s;
     opacity: 1;
     filter: blur(0);
+    transition-delay: 1.2s;
 }
 
-.active .animation {
+.login.active .form.animation {
     transform: translateX(-120%);
     opacity: 0;
     filter: blur(10px);
@@ -50,11 +50,22 @@
 
 .formBox.register .form {
     right: 0;
-    padding: 0 30px;
-    display: none;
+    padding: 0 25px;
+    opacity: 0;
 }
 
+.register .form.animation {
+    transition: .7s;
+    opacity: 1;
+    filter: blur(0);
 
+}
+
+.register.active .animation {
+    transform: translateY(-100%);
+    opacity: 1;
+    transition-delay: 2s;
+}
 
 .form {
     position: absolute;
@@ -185,14 +196,15 @@
     flex-direction: column;
 }
 
-.infoContent.animation {
+.infoContent.log.animation {
     transform: translateX(0);
     transition: .7s;
     opacity: 1;
     filter: blur(0);
+    transition-delay: 1.2s;
 }
 
-.active .infoContent.animation {
+.active .infoContent.log.animation {
     transform: translateX(120%);
     opacity: 0;
     filter: blur(10px);
@@ -209,6 +221,18 @@
     left: 0;
     text-align: left;
     padding: 0 150px 60px 40px;
+}
+
+.infoContent.reg.animation {
+    transform: translateY(0);
+    opacity: 0;
+}
+
+.active .infoContent.reg.animation {
+    transform: translateY(-100%);
+    opacity: 1;
+    transition: .7s;
+    transition-delay: 2s;
 }
 
 .infoContent p {
@@ -232,6 +256,11 @@
    
 }
 
+.wave.animation {
+    transition: 1s ease;
+    transition-delay: 1s;
+}
+
 .active.wave.animation {
     transform: rotate(0) skewY(0);
     transition: 1s ease;
@@ -249,15 +278,13 @@
     /* transform: rotate(-11deg) skewY(-41deg); */
     transform: rotate(0) skewY(0);
     transform-origin: bottom left;
-    border-bottom: 3px solid #0ef;
-    /* transition: 1.5s ease;
-    transition-delay: 1.2s; */
+    border-top: 3px solid #0ef;
+    transition: 1.5s ease;
+    
 }
 
 .active.wave2.animation {
-    
     transform: rotate(-11deg) skewY(-41deg);
-    
     transition: 1.2s;
     transition-delay: 1s;
     

@@ -11,6 +11,12 @@ const SignIn = () => {
 
   const [isSignUpClicked, setIsSignUpClicked] = useState(false);
 
+  const [isLoginClicked, setIsLoginClicked] = useState(false);
+
+  const handleLoginClick = () => {
+    setIsSignUpClicked(!isSignUpClicked);
+  }
+
   const handleSignUpClick = () => {
     setIsSignUpClicked(!isSignUpClicked);
   };
@@ -18,12 +24,33 @@ const SignIn = () => {
   return (
     <Flex className={classes.container}>
       <div className={classes.wrapper}>
-        <span className={classNames(classes.wave, classes.animation, isSignUpClicked ? classes.active : "")}></span>
-        <span className={classNames(classes.wave2, classes.animation, isSignUpClicked ? classes.active : "")}></span>
+        <span
+          className={classNames(
+            classes.wave,
+            classes.animation,
+            isSignUpClicked ? classes.active : ""
+          )}
+        ></span>
+        <span
+          className={classNames(
+            classes.wave2,
+            classes.animation,
+            isSignUpClicked ? classes.active : ""
+          )}
+        ></span>
 
-        <div className={classNames(classes.formBox, classes.login, isSignUpClicked ? classes.active : "")}>
-          <form className={classNames(classes.form, classes.animation)} action="#" >
-            <Heading fontSize={"32px"} textAlign={"center"} color={"white"}  >
+        <div
+          className={classNames(
+            classes.formBox,
+            classes.login,
+            isSignUpClicked ? classes.active : ""
+          )}
+        >
+          <form
+            className={classNames(classes.form, classes.animation)}
+            action="#"
+          >
+            <Heading fontSize={"32px"} textAlign={"center"} color={"white"}>
               Login
             </Heading>
             <div className={classes.inputBox}>
@@ -49,14 +76,24 @@ const SignIn = () => {
             <Box className={classes.link}>
               <p>
                 Don't have an account ?{" "}
-                <a href="#" className={classNames(classes.btnSignup)} onClick={() => handleSignUpClick()}>
+                <a
+                  href="#"
+                  className={classNames(classes.btnSignup)}
+                  onClick={() => handleSignUpClick()}
+                >
                   Sign up
                 </a>
               </p>
             </Box>
           </form>
 
-          <div className={classNames(classes.infoContent, classes.log, classes.animation)}>
+          <div
+            className={classNames(
+              classes.infoContent,
+              classes.log,
+              classes.animation
+            )}
+          >
             <Heading
               textTransform={"uppercase"}
               fontSize={"36px"}
@@ -69,8 +106,17 @@ const SignIn = () => {
           </div>
         </div>
 
-        <div className={classNames(classes.formBox, classes.register)}>
-        <form className={classNames(classes.form, classes.animation)} action="#" >
+        <div
+          className={classNames(
+            classes.formBox,
+            classes.register,
+            isSignUpClicked ? classes.active : ""
+          )}
+        >
+          <form
+            className={classNames(classes.form, classes.animation)}
+            action="#"
+          >
             <Heading fontSize={"32px"} textAlign={"center"} color={"white"}>
               Sign Up
             </Heading>
@@ -95,7 +141,7 @@ const SignIn = () => {
             <Button
               className={classes.btn}
               type="submit"
-              onClick={() => router.push("/")}
+              onClick={() => router.push("/signup")}
             >
               Register
             </Button>
@@ -103,14 +149,20 @@ const SignIn = () => {
             <Box className={classes.link}>
               <p>
                 Already have an account ?{" "}
-                <a href="#" className={classes.btnSignup}>
+                <a href="#" className={classes.btnLogin} onClick={() => handleLoginClick()}>
                   Login
                 </a>
               </p>
             </Box>
           </form>
 
-          <div className={classNames(classes.infoContent, classes.reg, classes.animation)}>
+          <div
+            className={classNames(
+              classes.infoContent,
+              classes.reg,
+              classes.animation
+            )}
+          >
             <Heading
               textTransform={"uppercase"}
               fontSize={"36px"}
@@ -128,5 +180,3 @@ const SignIn = () => {
 };
 
 export default SignIn;
-
-
