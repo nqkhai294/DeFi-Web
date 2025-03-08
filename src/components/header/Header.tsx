@@ -62,7 +62,6 @@ const Header = () => {
           <Box className={classes.auth}>
             <Button className={classes.authBtn} onClick={() => handleBtnSignIn()}>SIGN IN</Button>
 
-            <Button className={classes.authBtn} onClick={() => handleBtnSignUp()}>SIGN UP</Button>
           </Box>
         </Flex>
       </Flex>
