@@ -1,11 +1,14 @@
+'use client'
+
 import type { Metadata } from "next";
 import { Provider } from "@/components/ui/provider";
 import "../../public/styles/fonts.css";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Providers from '@/providers/Providers'
+import { ThirdwebProvider } from "thirdweb/react";
 
-export const metadata: Metadata = {
-  title: "Boost Your Dream",
-  description: "Come on and boost your dream with us",
-};
+const queryClient = new QueryClient();
+
 
 export default function RootLayout({
   children,
@@ -21,7 +24,15 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Provider>{children}</Provider>
+        <ThirdwebProvider
+          clientId={process.env.NEXT_PUBLIC_THIRDWEB_CLIENT_ID}
+        >
+          <QueryClientProvider client={queryClient}>
+            <Providers>
+              <Provider>{children}</Provider>
+            </Providers>
+          </QueryClientProvider>
+        </ThirdwebProvider>
       </body>
     </html>
   );

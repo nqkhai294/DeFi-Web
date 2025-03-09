@@ -1,13 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react';
+import { LoginButton } from '../wallet/app/consts/LoginButton';
 
 const Profile = () => {
     const useAuth = () => {
         const [user, setUser] = useState<any>(null);
     
         useEffect(() => {
-            // Simulate an API call to fetch user data
             const fetchUser = async () => {
                 const userData = await new Promise((resolve) =>
                     setTimeout(() => resolve({ name: 'John Doe', email: 'john.doe@example.com' }), 1000)
@@ -21,11 +21,13 @@ const Profile = () => {
         return { user };
     }
     const { user } = useAuth();
+
     return (
         <div>
-        <h1>Profile</h1>
-        <p>Name: {user?.name}</p>
-        <p>Email: {user?.email}</p>
+            <h1>Profile</h1>
+            <p>Name: {user?.name}</p>
+            <p>Email: {user?.email}</p>
+            <LoginButton />
         </div>
     );
 }
